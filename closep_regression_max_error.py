@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from ebcli.lib.utils import urllib
+from math import sqrt
 from matplotlib.pylab import gca
 import matplotlib.ticker as mticker
 import matplotlib.dates as mdates
@@ -40,13 +41,36 @@ def get_constant_term(segment_set, index):
     return coeff_constant_term
 
 
+def evaluate_MSE(data, segment_set):
+    """
+    :param data: the set of close price data
+    :param segment_set: the set of segments
+    :return: the global error
+    """
+    total_error = 0
+
+    # Scan through the segments
+    for i in range(0, len(segment_set)):
+        error = 0
+        a = get_angular_coefficient(segment_set, i)
+        b = get_constant_term(segment_set, i)
+
+        for j in range((segment_set[i])[0], (segment_set[i])[2]):
+            # predicted value
+            y = a * j + b
+            error += pow((data[j]-y), 2)
+
+        total_error += error/(len(range((segment_set[i])[0], (segment_set[i])[2])))
+
+    return sqrt(total_error)
+
+
 def evaluate_global_error(data, segment_set):
     """
     :param data: the set of close price data
     :param segment_set: the set of segments
     :return: the global error
     """
-    current_segment = []
     total_error = 0
 
     for i in range(0, len(segment_set)):
@@ -57,7 +81,6 @@ def evaluate_global_error(data, segment_set):
         # The equation of the line is y = current_angular_coeff * x + current_constant_term
         for j in range((segment_set[i])[0], (segment_set[i])[2]):
             y = current_angular_coeff * j + current_constant_term
-            current_segment.append(y)
             error += abs(y - data[j])
 
         total_error += error
@@ -167,7 +190,7 @@ def draw_window(my_dpi, data, max_error):
     except e:
         print("Error")
 
-def draw_window(my_dpi, data):
+def draw_window(my_dpi, data, max_error):
     """
     All data contanining the stock price info are retrieved from the database given the stock name
     :param my_dpi: dpi screen
@@ -195,14 +218,6 @@ def draw_window(my_dpi, data):
         date, closep_raw = np.loadtxt(stockFile, delimiter=',', unpack=True,
                                                               converters={0: mdates.bytespdate2num('%Y%m%d')})
         closep = closep_raw[::-1]
-        max_closep = max(closep)
-
-        if(max_closep > 2.0):
-            max_error = max(closep)*2.7;
-        else:
-            max_error = max(closep)/2.5;
-
-        print(max_error)
 
         # First subplot
         ax1 = plt.subplot2grid((3, 3), (0, 0), colspan=3)
@@ -210,7 +225,9 @@ def draw_window(my_dpi, data):
         draw_plot(closep,plt,ax1,"Sliding window with regression")
         draw_segments(segments,'red')
         plt.ylabel('Stock Price')
-        plt.title("SLIDING WINDOW - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
+        plt.title("SLIDING WINDOW - ERROR "+str(evaluate_MSE(closep, segments)), color='Yellow', fontweight='bold')
+
+
 
         # Second subplot
         ax2 = plt.subplot2grid((3, 3), (1, 0), colspan=3)
@@ -218,7 +235,8 @@ def draw_window(my_dpi, data):
         draw_plot(closep, plt, ax2, "Sliding window with regression")
         draw_segments(segments,'green')
         plt.ylabel('Stock Price')
-        plt.title("TOP DOWN - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
+        plt.title("TOP DOWN - ERROR "+str(evaluate_MSE(closep, segments)), color='Yellow', fontweight='bold')
+
 
         # Third subplot
         ax3 = plt.subplot2grid((3, 3), (2, 0), colspan=3)
@@ -226,7 +244,7 @@ def draw_window(my_dpi, data):
         draw_plot(closep, plt, ax3, "Sliding window with regression")
         draw_segments(segments,'blue')
         plt.ylabel('Stock Price')
-        plt.title("BOTTOM UP - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
+        plt.title("BOTTOM UP - ERROR "+str(evaluate_MSE(closep, segments)), color='Yellow', fontweight='bold')
 
         plt.subplots_adjust(hspace=0.3)
         plt.show()
@@ -235,7 +253,7 @@ def draw_window(my_dpi, data):
         print("Error")
 
 
-def draw_plot(data, plt,ax,plot_title):
+def draw_plot(data, plt, ax, plot_title):
     ax.plot(range(len(data)), data, alpha=0.8, color='black')
     ax.grid(True, color='#969696')
     ax.yaxis.label.set_color("w")
@@ -330,12 +348,11 @@ if __name__ == '__main__':
 
     # Data is fetched from db
     stock = input("Stock name: ")
-    # err = input("Max error: ")
+    err = input("Max error: ")
     res = fetch_data_from_db(connection, stock)
 
     # Figure is built
-    draw_window(MY_DPI, res)
-    # draw_window(MY_DPI, res, float(err))
+    draw_window(MY_DPI, res, float(err))
     # draw_window_API(MY_DPI, float(err), stock)
 
 

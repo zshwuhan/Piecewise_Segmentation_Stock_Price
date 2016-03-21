@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from ebcli.lib.utils import urllib
+from math import sqrt
 from matplotlib.pylab import gca
 import matplotlib.ticker as mticker
 import matplotlib.dates as mdates
@@ -113,7 +114,7 @@ def draw_window(my_dpi, data, max_error):
     """
 
     fig = plt.figure(figsize=(1000/my_dpi, 700/my_dpi), dpi=96, facecolor='black')
-    fig.suptitle("PIECEWISE SEGMENTATION REGRESSION", fontsize="15", color="white", fontweight='bold', bbox={'facecolor':'red', 'alpha':0.5, 'pad':10})
+    fig.suptitle("PIECEWISE SEGMENTATION INTERPOLATION", fontsize="15", color="white", fontweight='bold', bbox={'facecolor':'red', 'alpha':0.5, 'pad':10})
 
     try:
         stockFile = []
@@ -139,24 +140,25 @@ def draw_window(my_dpi, data, max_error):
 
         # First subplot
         ax1 = plt.subplot2grid((3, 3), (0, 0), colspan=3)
-        segments = segment.slidingwindowsegment(closep, fit.regression, fit.sumsquared_error, max_error)
-        draw_plot(closep,plt,ax1,"Sliding window with regression")
+        segments = segment.slidingwindowsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+        draw_plot(closep,plt,ax1,"Sliding window with interpolation")
         draw_segments(segments,'red')
         plt.ylabel('Stock Price')
         plt.title("SLIDING WINDOW - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
 
         # Second subplot
         ax2 = plt.subplot2grid((3, 3), (1, 0), colspan=3)
-        segments = segment.topdownsegment(closep, fit.regression, fit.sumsquared_error, max_error)
-        draw_plot(closep, plt, ax2, "Sliding window with regression")
+        segments = segment.topdownsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+        draw_plot(closep, plt, ax2, "Sliding window with interpolation")
         draw_segments(segments,'green')
         plt.ylabel('Stock Price')
         plt.title("TOP DOWN - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
 
         # Third subplot
         ax3 = plt.subplot2grid((3, 3), (2, 0), colspan=3)
-        segments = segment.bottomupsegment(closep, fit.regression, fit.sumsquared_error, max_error)
-        draw_plot(closep, plt, ax3, "Sliding window with regression")
+        segments = segment.bottomupsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+        segments = segment.bottomupsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+        draw_plot(closep, plt, ax3, "Sliding window with interpolation")
         draw_segments(segments,'blue')
         plt.ylabel('Stock Price')
         plt.title("BOTTOM UP - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
@@ -167,16 +169,37 @@ def draw_window(my_dpi, data, max_error):
     except e:
         print("Error")
 
-def draw_window(my_dpi, data):
+def evaluate_MSE(data, segment_set):
+    """
+    :param data: the set of close price data
+    :param segment_set: the set of segments
+    :return: the global error
+    """
+    total_error = 0
+
+    # Scan through the segments
+    for i in range(0, len(segment_set)):
+        error = 0
+        a = get_angular_coefficient(segment_set, i)
+        b = get_constant_term(segment_set, i)
+
+        for j in range((segment_set[i])[0], (segment_set[i])[2]):
+            # predicted value
+            y = a * j + b
+            error += pow((data[j]-y), 2)
+
+        total_error += error/(len(range((segment_set[i])[0], (segment_set[i])[2])))
+
+    return sqrt(total_error)
+
+
+def printError(my_dpi, data):
     """
     All data contanining the stock price info are retrieved from the database given the stock name
     :param my_dpi: dpi screen
     :param data: data to be plot
     :param max_error: maximum error allowed
     """
-
-    fig = plt.figure(figsize=(1000/my_dpi, 700/my_dpi), dpi=96, facecolor='black')
-    fig.suptitle("PIECEWISE SEGMENTATION REGRESSION", fontsize="15", color="white", fontweight='bold', bbox={'facecolor':'red', 'alpha':0.5, 'pad':10})
 
     try:
         stockFile = []
@@ -195,47 +218,23 @@ def draw_window(my_dpi, data):
         date, closep_raw = np.loadtxt(stockFile, delimiter=',', unpack=True,
                                                               converters={0: mdates.bytespdate2num('%Y%m%d')})
         closep = closep_raw[::-1]
-        max_closep = max(closep)
 
-        if(max_closep > 2.0):
-            max_error = max(closep)*2.7;
-        else:
-            max_error = max(closep)/2.5;
-
-        print(max_error)
-
-        # First subplot
-        ax1 = plt.subplot2grid((3, 3), (0, 0), colspan=3)
-        segments = segment.slidingwindowsegment(closep, fit.regression, fit.sumsquared_error, max_error)
-        draw_plot(closep,plt,ax1,"Sliding window with regression")
-        draw_segments(segments,'red')
-        plt.ylabel('Stock Price')
-        plt.title("SLIDING WINDOW - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
-
-        # Second subplot
-        ax2 = plt.subplot2grid((3, 3), (1, 0), colspan=3)
-        segments = segment.topdownsegment(closep, fit.regression, fit.sumsquared_error, max_error)
-        draw_plot(closep, plt, ax2, "Sliding window with regression")
-        draw_segments(segments,'green')
-        plt.ylabel('Stock Price')
-        plt.title("TOP DOWN - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
-
-        # Third subplot
-        ax3 = plt.subplot2grid((3, 3), (2, 0), colspan=3)
-        segments = segment.bottomupsegment(closep, fit.regression, fit.sumsquared_error, max_error)
-        draw_plot(closep, plt, ax3, "Sliding window with regression")
-        draw_segments(segments,'blue')
-        plt.ylabel('Stock Price')
-        plt.title("BOTTOM UP - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
-
-        plt.subplots_adjust(hspace=0.3)
-        plt.show()
+        max_error = 0.1
+        while max_error < float(2*max(closep)):
+            segments = segment.slidingwindowsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+            err1 = str(evaluate_MSE(closep, segments))
+            segments = segment.topdownsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+            err2 = str(evaluate_MSE(closep, segments))
+            segments = segment.bottomupsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+            err3 = str(evaluate_MSE(closep, segments))
+            print(str(max_error)+" "+err1+" "+err2+" "+err3)
+            max_error += 0.1
 
     except e:
         print("Error")
 
 
-def draw_plot(data, plt,ax,plot_title):
+def draw_plot(data, plt, ax, plot_title):
     ax.plot(range(len(data)), data, alpha=0.8, color='black')
     ax.grid(True, color='#969696')
     ax.yaxis.label.set_color("w")
@@ -264,7 +263,7 @@ def draw_window_API(my_dpi, max_error, stockToFetch):
     """
 
     fig = plt.figure(figsize=(1000/my_dpi, 700/my_dpi), dpi=96, edgecolor='k', facecolor='black')
-    fig.suptitle("PIECEWISE SEGMENTATION REGRESSION", fontsize="15", color="white", fontweight='bold', bbox={'facecolor':'red', 'alpha':0.5, 'pad':10})
+    fig.suptitle("PIECEWISE SEGMENTATION INTERPOLATION", fontsize="15", color="white", fontweight='bold', bbox={'facecolor':'red', 'alpha':0.5, 'pad':10})
 
     try:
         print('Currently Pulling',stockToFetch)
@@ -289,24 +288,24 @@ def draw_window_API(my_dpi, max_error, stockToFetch):
         SP = len(date)
         # First subplot
         ax1 = plt.subplot2grid((3, 3), (0, 0), colspan=3)
-        segments = segment.slidingwindowsegment(closep, fit.regression, fit.sumsquared_error, max_error)
-        draw_plot(closep,plt,ax1,"Sliding window with regression")
+        segments = segment.slidingwindowsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+        draw_plot(closep,plt,ax1,"Sliding window with interpolation")
         draw_segments(segments,'red')
         plt.ylabel('Stock Price')
         plt.title("Sliding window", color='w')
 
         # Second subplot
         ax2 = plt.subplot2grid((3, 3), (1, 0), colspan=3)
-        segments = segment.topdownsegment(closep, fit.regression, fit.sumsquared_error, max_error)
-        draw_plot(closep, plt, ax2, "Sliding window with regression")
+        segments = segment.topdownsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+        draw_plot(closep, plt, ax2, "Sliding window with interpolation")
         draw_segments(segments,'green')
         plt.ylabel('Stock Price')
         plt.title("Top down", color='w')
 
         # Third subplot
         ax3 = plt.subplot2grid((3, 3), (2, 0), colspan=3)
-        segments = segment.bottomupsegment(closep, fit.regression, fit.sumsquared_error, max_error)
-        draw_plot(closep, plt, ax3, "Sliding window with regression")
+        segments = segment.bottomupsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+        draw_plot(closep, plt, ax3, "Sliding window with interpolation")
         draw_segments(segments,'blue')
         plt.ylabel('Stock Price')
         plt.title("Bottom up", color='w')
@@ -334,8 +333,9 @@ if __name__ == '__main__':
     res = fetch_data_from_db(connection, stock)
 
     # Figure is built
-    draw_window(MY_DPI, res)
+    # draw_window(MY_DPI, res)
     # draw_window(MY_DPI, res, float(err))
+    printError(MY_DPI, res)
     # draw_window_API(MY_DPI, float(err), stock)
 
 

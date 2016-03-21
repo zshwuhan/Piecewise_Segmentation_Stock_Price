@@ -1,11 +1,10 @@
 import matplotlib.pyplot as plt
 from ebcli.lib.utils import urllib
-from matplotlib import gridspec
+from math import sqrt
 from matplotlib.pylab import gca
+import matplotlib.ticker as mticker
 import matplotlib.dates as mdates
 import json
-import matplotlib.patches as mpatches
-
 
 import numpy as np
 import pymysql
@@ -15,45 +14,6 @@ import fit
 import segment
 
 plt.matplotlib.rcParams.update({'font.size': 9})
-
-
-def connection_to_db(path):
-    """
-    It opens the connection with the database by parsing the json file in which database credentials are listed
-    :param path: path of the database details (i.e. username, password, ...)
-    :return: the connection to the database
-    """
-    with open(path) as data_file:
-            json_data = json.load(data_file)
-
-    connection = pymysql.connect(host=json_data['HOST'],
-                                 user=json_data['USER'],
-                                 password=json_data['PASSWORD'],
-                                 db=json_data['DB_NAME'],
-                                 charset='utf8mb4',
-                                 cursorclass=pymysql.cursors.DictCursor)
-    return connection
-
-
-def fetch_data_from_db(db, company):
-    """
-    All data contanining the stock price info are retrieved from the database given the stock name
-    :param db: connection name
-    :param company: company name
-    :return: the list of data just fetched
-    """
-    cur = db.cursor()
-    cur.execute("SELECT * FROM Stock_price WHERE company = %s", company)
-    query_result = cur.fetchall()
-
-    # list of dates
-    result = []
-
-    for i in query_result:
-        date_formatted = (str(i['date_stock'])[0:10]).split("-")
-        result.append(date_formatted[0]+""+date_formatted[1]+""+date_formatted[2]+","+str(i['close_price'])+","+str(i['volume']))
-
-    return result
 
 
 def get_angular_coefficient(segment_set, index):
@@ -106,6 +66,45 @@ def evaluate_global_error(data, segment_set):
     return total_error
 
 
+def connection_to_db(path):
+    """
+    It opens the connection with the database by parsing the json file in which database credentials are listed
+    :param path: path of the database details (i.e. username, password, ...)
+    :return: the connection to the database
+    """
+    with open(path) as data_file:
+            json_data = json.load(data_file)
+
+    connection = pymysql.connect(host=json_data['HOST'],
+                                 user=json_data['USER'],
+                                 password=json_data['PASSWORD'],
+                                 db=json_data['DB_NAME'],
+                                 charset='utf8mb4',
+                                 cursorclass=pymysql.cursors.DictCursor)
+    return connection
+
+
+def fetch_data_from_db(db, company):
+    """
+    All data contanining the stock price info are retrieved from the database given the stock name
+    :param db: connection name
+    :param company: company name
+    :return: the list of data just fetched
+    """
+    cur = db.cursor()
+    cur.execute("SELECT * FROM Stock_price WHERE company = %s", company)
+    query_result = cur.fetchall()
+
+    # list of dates
+    result = []
+
+    for i in query_result:
+        date_formatted = (str(i['date_stock'])[0:10]).split("-")
+        result.append(date_formatted[0]+""+date_formatted[1]+""+date_formatted[2]+","+str(i['close_price']))
+
+    return result
+
+
 def draw_window(my_dpi, data, max_error):
     """
     All data contanining the stock price info are retrieved from the database given the stock name
@@ -115,14 +114,14 @@ def draw_window(my_dpi, data, max_error):
     """
 
     fig = plt.figure(figsize=(1000/my_dpi, 700/my_dpi), dpi=96, facecolor='black')
-    fig.suptitle("PIECEWISE SEGMENTATION INTERPOLATION", fontsize="15", color="white", fontweight='bold', bbox={'facecolor': 'red', 'alpha': 0.5, 'pad': 10})
+    fig.suptitle("PIECEWISE SEGMENTATION INTERPOLATION", fontsize="15", color="white", fontweight='bold', bbox={'facecolor':'red', 'alpha':0.5, 'pad':10})
 
     try:
         stockFile = []
         try:
             for eachLine in data:
                 splitLine = eachLine.split(',')
-                if len(splitLine) == 3:
+                if len(splitLine) == 2:
                     if 'values' not in eachLine:
                         stockFile.append(eachLine)
         except Exception as e:
@@ -131,13 +130,16 @@ def draw_window(my_dpi, data, max_error):
         print(str(e), 'failed to pull pricing data')
 
     try:
-        print(stockFile)
-        date, closep_raw, volume_raw = np.loadtxt(stockFile, delimiter=',', unpack=True,
+        date, closep_raw = np.loadtxt(stockFile, delimiter=',', unpack=True,
                                                               converters={0: mdates.bytespdate2num('%Y%m%d')})
         closep = closep_raw[::-1]
 
-        # First subplot stock price
-        ax1 = plt.subplot2grid((3, 2), (0, 0), colspan=3)
+        print(max(closep))
+
+        max_error = max(closep)*2.5;
+
+        # First subplot
+        ax1 = plt.subplot2grid((3, 3), (0, 0), colspan=3)
         segments = segment.slidingwindowsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
         draw_plot(closep,plt,ax1,"Sliding window with interpolation")
         draw_segments(segments,'red')
@@ -147,15 +149,16 @@ def draw_window(my_dpi, data, max_error):
         # Second subplot
         ax2 = plt.subplot2grid((3, 3), (1, 0), colspan=3)
         segments = segment.topdownsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
-        draw_plot(closep, plt, ax2, "Top down with interpolation")
-        draw_segments(segments, 'green')
+        draw_plot(closep, plt, ax2, "Sliding window with interpolation")
+        draw_segments(segments,'green')
         plt.ylabel('Stock Price')
         plt.title("TOP DOWN - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
 
         # Third subplot
         ax3 = plt.subplot2grid((3, 3), (2, 0), colspan=3)
         segments = segment.bottomupsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
-        draw_plot(closep, plt, ax3, "Bottom up with interpolation")
+        segments = segment.bottomupsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+        draw_plot(closep, plt, ax3, "Sliding window with interpolation")
         draw_segments(segments,'blue')
         plt.ylabel('Stock Price')
         plt.title("BOTTOM UP - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
@@ -166,10 +169,79 @@ def draw_window(my_dpi, data, max_error):
     except e:
         print("Error")
 
+def evaluate_MSE(data, segment_set):
+    """
+    :param data: the set of close price data
+    :param segment_set: the set of segments
+    :return: the global error
+    """
+    total_error = 0
+
+    # Scan through the segments
+    for i in range(0, len(segment_set)):
+        error = 0
+        a = get_angular_coefficient(segment_set, i)
+        b = get_constant_term(segment_set, i)
+
+        for j in range((segment_set[i])[0], (segment_set[i])[2]):
+            # predicted value
+            y = a * j + b
+            error += pow((data[j]-y), 2)
+
+        total_error += error/(len(range((segment_set[i])[0], (segment_set[i])[2])))
+
+    return sqrt(total_error)
+
+
+def printError(my_dpi, data):
+    """
+    All data contanining the stock price info are retrieved from the database given the stock name
+    :param my_dpi: dpi screen
+    :param data: data to be plot
+    :param max_error: maximum error allowed
+    """
+
+    try:
+        stockFile = []
+        try:
+            for eachLine in data:
+                splitLine = eachLine.split(',')
+                if len(splitLine) == 2:
+                    if 'values' not in eachLine:
+                        stockFile.append(eachLine)
+        except Exception as e:
+            print(str(e), 'failed to organize pulled data.')
+    except Exception as e:
+        print(str(e), 'failed to pull pricing data')
+
+    try:
+        date, closep_raw = np.loadtxt(stockFile, delimiter=',', unpack=True,
+                                                              converters={0: mdates.bytespdate2num('%Y%m%d')})
+        closep = closep_raw[::-1]
+
+        max_error = 0.1
+        while max_error < float(2*max(closep)):
+            segments1 = segment.slidingwindowsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+            segments2 = segment.slidingwindowsegment(closep, fit.regression, fit.sumsquared_error, max_error)
+            err1 = str(evaluate_MSE(closep, segments1))
+            err4 = str(evaluate_MSE(closep, segments2))
+            segments1 = segment.topdownsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+            segments2 = segment.topdownsegment(closep, fit.regression, fit.sumsquared_error, max_error)
+            err2 = str(evaluate_MSE(closep, segments1))
+            err5 = str(evaluate_MSE(closep, segments2))
+            segments1 = segment.bottomupsegment(closep, fit.interpolate, fit.sumsquared_error, max_error)
+            segments2 = segment.bottomupsegment(closep, fit.regression, fit.sumsquared_error, max_error)
+            err3 = str(evaluate_MSE(closep, segments1))
+            err6 = str(evaluate_MSE(closep, segments2))
+            print(str(max_error)+" "+err1+" "+err2+" "+err3+" "+err4+" "+err5+" "+err6)
+            max_error += 0.1
+
+    except e:
+        print("Error")
+
 
 def draw_plot(data, plt, ax, plot_title):
     ax.plot(range(len(data)), data, alpha=0.8, color='black')
-
     ax.grid(True, color='#969696')
     ax.yaxis.label.set_color("w")
     ax.xaxis.label.set_color("w")
@@ -181,7 +253,7 @@ def draw_plot(data, plt, ax, plot_title):
     plt.xlim((0, len(data)-1))
 
 
-def draw_segments(segments, color):
+def draw_segments(segments,color):
     ax = gca()
     for segment in segments:
         line = Line2D((segment[0],segment[2]),(segment[1],segment[3]),color=color)
@@ -226,8 +298,7 @@ def draw_window_API(my_dpi, max_error, stockToFetch):
         draw_plot(closep,plt,ax1,"Sliding window with interpolation")
         draw_segments(segments,'red')
         plt.ylabel('Stock Price')
-        plt.title("SLIDING WINDOW - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
-
+        plt.title("Sliding window", color='w')
 
         # Second subplot
         ax2 = plt.subplot2grid((3, 3), (1, 0), colspan=3)
@@ -235,7 +306,7 @@ def draw_window_API(my_dpi, max_error, stockToFetch):
         draw_plot(closep, plt, ax2, "Sliding window with interpolation")
         draw_segments(segments,'green')
         plt.ylabel('Stock Price')
-        plt.title("TOP DOWN - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
+        plt.title("Top down", color='w')
 
         # Third subplot
         ax3 = plt.subplot2grid((3, 3), (2, 0), colspan=3)
@@ -243,7 +314,7 @@ def draw_window_API(my_dpi, max_error, stockToFetch):
         draw_plot(closep, plt, ax3, "Sliding window with interpolation")
         draw_segments(segments,'blue')
         plt.ylabel('Stock Price')
-        plt.title("BOTTOM UP - ERROR "+str(evaluate_global_error(closep, segments)), color='Yellow', fontweight='bold')
+        plt.title("Bottom up", color='w')
 
         plt.subplots_adjust(hspace=0.3)
         plt.show()
@@ -264,13 +335,13 @@ if __name__ == '__main__':
 
     # Data is fetched from db
     stock = input("Stock name: ")
-    err = input("Max error: ")
+    # err = input("Max error: ")
     res = fetch_data_from_db(connection, stock)
 
-    print(res)
-
     # Figure is built
-    draw_window(MY_DPI, res, float(err))
+    # draw_window(MY_DPI, res)
+    # draw_window(MY_DPI, res, float(err))
+    printError(MY_DPI, res)
     # draw_window_API(MY_DPI, float(err), stock)
 
 

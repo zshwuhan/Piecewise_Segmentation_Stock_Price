@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="952ff1ea-8e6d-4e9e-8873-cae95dd4c921" name="Default" comment="">
+      <change type="MOVED" beforePath="$PROJECT_DIR$/closep_interpolation.py" afterPath="$PROJECT_DIR$/closep_interpolation_max_error.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/closep_regression.py" afterPath="$PROJECT_DIR$/closep_regression.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/fit.py" afterPath="$PROJECT_DIR$/fit.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/segment.py" afterPath="$PROJECT_DIR$/segment.py" />
     </list>
     <ignored path="piecewise_segmentation.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -17,9 +20,13 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/piecewise_segmentation$closep_interpolation_comparison.coverage" NAME="closep_interpolation_comparison Coverage Results" MODIFIED="1458582389357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/piecewise_segmentation$closep_comparison.coverage" NAME="closep_comparison Coverage Results" MODIFIED="1458582378862" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/piecewise_segmentation$drawPlot.coverage" NAME="drawPlot Coverage Results" MODIFIED="1457714221441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/piecewise_segmentation$main_interpolation.coverage" NAME="main_interpolation Coverage Results" MODIFIED="1458033158896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/piecewise_segmentation$main_regression.coverage" NAME="main_regression Coverage Results" MODIFIED="1458053371964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/piecewise_segmentation$closep_regression_comparison.coverage" NAME="closep_regression_comparison Coverage Results" MODIFIED="1458580895154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/piecewise_segmentation$main_interpolation.coverage" NAME="main_interpolation Coverage Results" MODIFIED="1458581040137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/piecewise_segmentation$closep_regression_max_error.coverage" NAME="closep_regression_max_error Coverage Results" MODIFIED="1458578803858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/piecewise_segmentation$main_regression.coverage" NAME="main_regression Coverage Results" MODIFIED="1458298296280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/piecewise_segmentation$main.coverage" NAME="main Coverage Results" MODIFIED="1457724631687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/piecewise_segmentation$volume_interpolation.coverage" NAME="volume_interpolation Coverage Results" MODIFIED="1457966840815" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -32,63 +39,68 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="drawPlot.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/drawPlot.py">
+      <file leaf-file-name="closep_regression_max_error.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/closep_regression_max_error.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="57" column="92" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="92" />
+            <state vertical-scroll-proportion="-13.333333">
+              <caret line="65" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding>
-                <element signature="e#0#89#0" expanded="true" />
+                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#9966#12628#0" expanded="false" />
+                <marker date="1458577953000" expanded="true" signature="3674:3718" placeholder="SELECT * FRO... Stock_price" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AWS_DB_details.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/AWS_DB_details.json">
+      <file leaf-file-name="closep_regression_comparison.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/closep_regression_comparison.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="closep_interpolation.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/closep_interpolation.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="144" column="14" selection-start-line="144" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+              <caret line="239" column="23" selection-start-line="239" selection-start-column="23" selection-end-line="239" selection-end-column="23" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
-                <element signature="e#399#1107#0" expanded="false" />
-                <element signature="e#1151#1776#0" expanded="false" />
-                <element signature="e#1832#2186#0" expanded="false" />
-                <element signature="e#2236#2674#0" expanded="false" />
-                <element signature="e#2727#3455#0" expanded="false" />
-                <marker date="1458033061000" expanded="true" signature="1408:1452" placeholder="SELECT * FRO... Stock_price" />
+                <marker date="1458579455000" expanded="true" signature="3074:3118" placeholder="SELECT * FRO... Stock_price" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="closep_regression.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/closep_regression.py">
+      <file leaf-file-name="closep_interpolation_max_error.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/closep_interpolation_max_error.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6914414">
-              <caret line="202" column="19" selection-start-line="202" selection-start-column="19" selection-end-line="202" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="250" column="71" selection-start-line="250" selection-start-column="60" selection-end-line="250" selection-end-column="71" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
-                <element signature="e#385#739#0" expanded="false" />
-                <element signature="e#789#1227#0" expanded="false" />
-                <element signature="e#1280#2008#0" expanded="false" />
-                <element signature="e#2043#2751#0" expanded="false" />
-                <element signature="e#2795#3399#0" expanded="false" />
-                <element signature="e#3448#6081#0" expanded="false" />
-                <element signature="e#8917#9289#0" expanded="false" />
-                <element signature="e#9331#9479#0" expanded="false" />
-                <element signature="e#9540#12202#0" expanded="false" />
-                <marker date="1458052013000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
+                <element signature="e#421#1129#0" expanded="false" />
+                <element signature="e#1173#1798#0" expanded="false" />
+                <element signature="e#1854#2208#0" expanded="false" />
+                <element signature="e#2258#2696#0" expanded="false" />
+                <element signature="e#2749#3477#0" expanded="false" />
+                <marker date="1458581038000" expanded="true" signature="1430:1474" placeholder="SELECT * FRO... Stock_price" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="closep_interpolation_comparison.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/closep_interpolation_comparison.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.481482">
+              <caret line="228" column="46" selection-start-line="228" selection-start-column="46" selection-end-line="228" selection-end-column="46" />
+              <folding>
+                <marker date="1458581312000" expanded="true" signature="3074:3118" placeholder="SELECT * FRO... Stock_price" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="closep_comparison.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/closep_comparison.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.43491125">
+              <caret line="91" column="31" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+              <folding>
+                <marker date="1458581934000" expanded="true" signature="3074:3118" placeholder="SELECT * FRO... Stock_price" />
               </folding>
             </state>
           </provider>
@@ -116,8 +128,15 @@
         <option value="$PROJECT_DIR$/main_regression.py" />
         <option value="$PROJECT_DIR$/main_interpolation.py" />
         <option value="$PROJECT_DIR$/volume_interpolation.py" />
-        <option value="$PROJECT_DIR$/closep_interpolation.py" />
         <option value="$PROJECT_DIR$/closep_regression.py" />
+        <option value="$PROJECT_DIR$/segment.py" />
+        <option value="$PROJECT_DIR$/wrappers.py" />
+        <option value="$PROJECT_DIR$/fit.py" />
+        <option value="$PROJECT_DIR$/closep_regression_max_error.py" />
+        <option value="$PROJECT_DIR$/closep_regression_comparison.py" />
+        <option value="$PROJECT_DIR$/closep_interpolation.py" />
+        <option value="$PROJECT_DIR$/closep_interpolation_comparison.py" />
+        <option value="$PROJECT_DIR$/closep_comparison.py" />
       </list>
     </option>
   </component>
@@ -157,6 +176,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -177,74 +197,19 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LittleThumb_DetectionInterestingPoints" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/example_data" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/example_data" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main_regression">
-    <configuration default="false" name="drawPlot" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="piecewise_segmentation" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/drawPlot.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="piecewise_segmentation" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="main_regression" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="piecewise_segmentation" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/closep_regression.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.closep_interpolation_comparison">
     <configuration default="false" name="main_interpolation" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -258,12 +223,12 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="piecewise_segmentation" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/closep_interpolation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/closep_interpolation_max_error.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="volume_interpolation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="closep_regression_max_error" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -276,7 +241,61 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="piecewise_segmentation" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/volume_interpolation.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/closep_regression_max_error.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="closep_regression_comparison" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="piecewise_segmentation" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/closep_regression_comparison.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="closep_interpolation_comparison" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="piecewise_segmentation" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/closep_interpolation_comparison.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="closep_comparison" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="piecewise_segmentation" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/closep_comparison.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -475,19 +494,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.drawPlot" />
-      <item index="1" class="java.lang.String" itemvalue="Python.main" />
-      <item index="2" class="java.lang.String" itemvalue="Python.main_regression" />
-      <item index="3" class="java.lang.String" itemvalue="Python.main_interpolation" />
-      <item index="4" class="java.lang.String" itemvalue="Python.volume_interpolation" />
+      <item index="0" class="java.lang.String" itemvalue="Python.main_interpolation" />
+      <item index="1" class="java.lang.String" itemvalue="Python.closep_regression_max_error" />
+      <item index="2" class="java.lang.String" itemvalue="Python.closep_regression_comparison" />
+      <item index="3" class="java.lang.String" itemvalue="Python.closep_interpolation_comparison" />
+      <item index="4" class="java.lang.String" itemvalue="Python.closep_comparison" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.main_regression" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main_interpolation" />
-        <item index="2" class="java.lang.String" itemvalue="Python.volume_interpolation" />
-        <item index="3" class="java.lang.String" itemvalue="Python.main" />
-        <item index="4" class="java.lang.String" itemvalue="Python.drawPlot" />
+        <item index="0" class="java.lang.String" itemvalue="Python.closep_interpolation_comparison" />
+        <item index="1" class="java.lang.String" itemvalue="Python.closep_comparison" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main_interpolation" />
+        <item index="3" class="java.lang.String" itemvalue="Python.closep_regression_comparison" />
+        <item index="4" class="java.lang.String" itemvalue="Python.closep_regression_max_error" />
       </list>
     </recent_temporary>
   </component>
@@ -505,16 +524,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="773" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1280" height="773" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -551,17 +570,36 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="24" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/closep_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#385#739#0" expanded="false" />
+            <element signature="e#789#1227#0" expanded="false" />
+            <element signature="e#1280#2008#0" expanded="false" />
+            <element signature="e#2043#2751#0" expanded="false" />
+            <element signature="e#2795#3399#0" expanded="false" />
+            <element signature="e#3448#6081#0" expanded="false" />
+            <element signature="e#8918#9290#0" expanded="false" />
+            <element signature="e#9332#9480#0" expanded="false" />
+            <element signature="e#9541#12203#0" expanded="false" />
+            <marker date="1458298082000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/drawPlot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="92" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="92" />
           <folding>
-            <element signature="e#0#89#0" expanded="true" />
+            <element signature="e#0#89#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -574,18 +612,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/closep_interpolation.py">
+    <entry file="file://$PROJECT_DIR$/closep_interpolation_max_error.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="144" column="14" selection-start-line="144" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#399#1107#0" expanded="false" />
-            <element signature="e#1151#1776#0" expanded="false" />
-            <element signature="e#1832#2186#0" expanded="false" />
-            <element signature="e#2236#2674#0" expanded="false" />
-            <element signature="e#2727#3455#0" expanded="false" />
-            <marker date="1458033061000" expanded="true" signature="1408:1452" placeholder="SELECT * FRO... Stock_price" />
+            <element signature="e#421#1129#0" expanded="false" />
+            <element signature="e#1173#1798#0" expanded="false" />
+            <element signature="e#1854#2208#0" expanded="false" />
+            <element signature="e#2258#2696#0" expanded="false" />
+            <element signature="e#2749#3477#0" expanded="false" />
+            <marker date="1458581038000" expanded="true" signature="1430:1474" placeholder="SELECT * FRO... Stock_price" />
           </folding>
         </state>
       </provider>
@@ -595,17 +632,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
             <element signature="e#385#739#0" expanded="false" />
             <element signature="e#789#1227#0" expanded="false" />
             <element signature="e#1280#2008#0" expanded="false" />
             <element signature="e#2043#2751#0" expanded="false" />
             <element signature="e#2795#3399#0" expanded="false" />
             <element signature="e#3448#6081#0" expanded="false" />
-            <element signature="e#8917#9289#0" expanded="false" />
-            <element signature="e#9331#9479#0" expanded="false" />
-            <element signature="e#9540#12202#0" expanded="false" />
-            <marker date="1458052013000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
+            <element signature="e#8918#9290#0" expanded="false" />
+            <element signature="e#9332#9480#0" expanded="false" />
+            <element signature="e#9541#12203#0" expanded="false" />
+            <marker date="1458298082000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
           </folding>
         </state>
       </provider>
@@ -613,9 +649,9 @@
     <entry file="file://$PROJECT_DIR$/drawPlot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="92" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="92" />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#89#0" expanded="true" />
+            <element signature="e#0#89#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -628,18 +664,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/closep_interpolation.py">
+    <entry file="file://$PROJECT_DIR$/closep_interpolation_max_error.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="144" column="14" selection-start-line="144" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="e#421#1129#0" expanded="false" />
+            <element signature="e#1173#1798#0" expanded="false" />
+            <element signature="e#1854#2208#0" expanded="false" />
+            <element signature="e#2258#2696#0" expanded="false" />
+            <element signature="e#2749#3477#0" expanded="false" />
+            <marker date="1458581038000" expanded="true" signature="1430:1474" placeholder="SELECT * FRO... Stock_price" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drawPlot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="92" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#89#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/AWS_DB_details.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/closep_interpolation_max_error.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="144" column="14" selection-start-line="144" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="e#421#1129#0" expanded="false" />
+            <element signature="e#1173#1798#0" expanded="false" />
+            <element signature="e#1854#2208#0" expanded="false" />
+            <element signature="e#2258#2696#0" expanded="false" />
+            <element signature="e#2749#3477#0" expanded="false" />
+            <marker date="1458581038000" expanded="true" signature="1430:1474" placeholder="SELECT * FRO... Stock_price" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/closep_regression.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#385#739#0" expanded="false" />
+            <element signature="e#789#1227#0" expanded="false" />
+            <element signature="e#1280#2008#0" expanded="false" />
+            <element signature="e#2043#2751#0" expanded="false" />
+            <element signature="e#2795#3399#0" expanded="false" />
+            <element signature="e#3448#6081#0" expanded="false" />
+            <element signature="e#8918#9290#0" expanded="false" />
+            <element signature="e#9332#9480#0" expanded="false" />
+            <element signature="e#9541#12203#0" expanded="false" />
+            <marker date="1458298082000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drawPlot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="57" column="92" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#89#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/AWS_DB_details.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/closep_interpolation_max_error.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="150" column="24" selection-start-line="150" selection-start-column="24" selection-end-line="150" selection-end-column="24" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#399#1107#0" expanded="false" />
-            <element signature="e#1151#1776#0" expanded="false" />
-            <element signature="e#1832#2186#0" expanded="false" />
-            <element signature="e#2236#2674#0" expanded="false" />
-            <element signature="e#2727#3455#0" expanded="false" />
-            <marker date="1458033061000" expanded="true" signature="1408:1452" placeholder="SELECT * FRO... Stock_price" />
+            <element signature="e#421#1129#0" expanded="false" />
+            <element signature="e#1173#1798#0" expanded="false" />
+            <element signature="e#1854#2208#0" expanded="false" />
+            <element signature="e#2258#2696#0" expanded="false" />
+            <element signature="e#2749#3477#0" expanded="false" />
+            <marker date="1458581038000" expanded="true" signature="1430:1474" placeholder="SELECT * FRO... Stock_price" />
           </folding>
         </state>
       </provider>
@@ -656,7 +776,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="92" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="92" />
           <folding>
-            <element signature="e#0#89#0" expanded="true" />
+            <element signature="e#0#89#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -674,33 +794,31 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="200" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
             <element signature="e#385#739#0" expanded="false" />
             <element signature="e#789#1227#0" expanded="false" />
             <element signature="e#1280#2008#0" expanded="false" />
             <element signature="e#2043#2751#0" expanded="false" />
             <element signature="e#2795#3399#0" expanded="false" />
             <element signature="e#3448#6081#0" expanded="false" />
-            <element signature="e#8917#9289#0" expanded="false" />
-            <element signature="e#9331#9479#0" expanded="false" />
-            <element signature="e#9540#12202#0" expanded="false" />
-            <marker date="1458052013000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
+            <element signature="e#8918#9290#0" expanded="false" />
+            <element signature="e#9332#9480#0" expanded="false" />
+            <element signature="e#9541#12203#0" expanded="false" />
+            <marker date="1458298082000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/closep_interpolation.py">
+    <entry file="file://$PROJECT_DIR$/closep_interpolation_max_error.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#399#1107#0" expanded="false" />
-            <element signature="e#1151#1776#0" expanded="false" />
-            <element signature="e#1832#2186#0" expanded="false" />
-            <element signature="e#2236#2674#0" expanded="false" />
-            <element signature="e#2727#3455#0" expanded="false" />
-            <marker date="1458033061000" expanded="true" signature="1408:1452" placeholder="SELECT * FRO... Stock_price" />
+            <element signature="e#421#1129#0" expanded="false" />
+            <element signature="e#1173#1798#0" expanded="false" />
+            <element signature="e#1854#2208#0" expanded="false" />
+            <element signature="e#2258#2696#0" expanded="false" />
+            <element signature="e#2749#3477#0" expanded="false" />
+            <marker date="1458581038000" expanded="true" signature="1430:1474" placeholder="SELECT * FRO... Stock_price" />
           </folding>
         </state>
       </provider>
@@ -710,7 +828,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="92" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="92" />
           <folding>
-            <element signature="e#0#89#0" expanded="true" />
+            <element signature="e#0#89#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -728,33 +846,31 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="200" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
             <element signature="e#385#739#0" expanded="false" />
             <element signature="e#789#1227#0" expanded="false" />
             <element signature="e#1280#2008#0" expanded="false" />
             <element signature="e#2043#2751#0" expanded="false" />
             <element signature="e#2795#3399#0" expanded="false" />
             <element signature="e#3448#6081#0" expanded="false" />
-            <element signature="e#8917#9289#0" expanded="false" />
-            <element signature="e#9331#9479#0" expanded="false" />
-            <element signature="e#9540#12202#0" expanded="false" />
-            <marker date="1458052013000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
+            <element signature="e#8918#9290#0" expanded="false" />
+            <element signature="e#9332#9480#0" expanded="false" />
+            <element signature="e#9541#12203#0" expanded="false" />
+            <marker date="1458298082000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/closep_interpolation.py">
+    <entry file="file://$PROJECT_DIR$/closep_interpolation_max_error.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#399#1107#0" expanded="false" />
-            <element signature="e#1151#1776#0" expanded="false" />
-            <element signature="e#1832#2186#0" expanded="false" />
-            <element signature="e#2236#2674#0" expanded="false" />
-            <element signature="e#2727#3455#0" expanded="false" />
-            <marker date="1458033061000" expanded="true" signature="1408:1452" placeholder="SELECT * FRO... Stock_price" />
+            <element signature="e#421#1129#0" expanded="false" />
+            <element signature="e#1173#1798#0" expanded="false" />
+            <element signature="e#1854#2208#0" expanded="false" />
+            <element signature="e#2258#2696#0" expanded="false" />
+            <element signature="e#2749#3477#0" expanded="false" />
+            <marker date="1458581038000" expanded="true" signature="1430:1474" placeholder="SELECT * FRO... Stock_price" />
           </folding>
         </state>
       </provider>
@@ -764,7 +880,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#89#0" expanded="true" />
+            <element signature="e#0#89#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -782,17 +898,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="200" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
             <element signature="e#385#739#0" expanded="false" />
             <element signature="e#789#1227#0" expanded="false" />
             <element signature="e#1280#2008#0" expanded="false" />
             <element signature="e#2043#2751#0" expanded="false" />
             <element signature="e#2795#3399#0" expanded="false" />
             <element signature="e#3448#6081#0" expanded="false" />
-            <element signature="e#8917#9289#0" expanded="false" />
-            <element signature="e#9331#9479#0" expanded="false" />
-            <element signature="e#9540#12202#0" expanded="false" />
-            <marker date="1458052013000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
+            <element signature="e#8918#9290#0" expanded="false" />
+            <element signature="e#9332#9480#0" expanded="false" />
+            <element signature="e#9541#12203#0" expanded="false" />
+            <marker date="1458298082000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
           </folding>
         </state>
       </provider>
@@ -802,7 +917,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="92" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="92" />
           <folding>
-            <element signature="e#0#89#0" expanded="true" />
+            <element signature="e#0#89#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -820,33 +935,31 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="200" column="17" selection-start-line="0" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
             <element signature="e#385#739#0" expanded="false" />
             <element signature="e#789#1227#0" expanded="false" />
             <element signature="e#1280#2008#0" expanded="false" />
             <element signature="e#2043#2751#0" expanded="false" />
             <element signature="e#2795#3399#0" expanded="false" />
             <element signature="e#3448#6081#0" expanded="false" />
-            <element signature="e#8917#9289#0" expanded="false" />
-            <element signature="e#9331#9479#0" expanded="false" />
-            <element signature="e#9540#12202#0" expanded="false" />
-            <marker date="1458052013000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
+            <element signature="e#8918#9290#0" expanded="false" />
+            <element signature="e#9332#9480#0" expanded="false" />
+            <element signature="e#9541#12203#0" expanded="false" />
+            <marker date="1458298082000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/closep_interpolation.py">
+    <entry file="file://$PROJECT_DIR$/closep_interpolation_max_error.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#399#1107#0" expanded="false" />
-            <element signature="e#1151#1776#0" expanded="false" />
-            <element signature="e#1832#2186#0" expanded="false" />
-            <element signature="e#2236#2674#0" expanded="false" />
-            <element signature="e#2727#3455#0" expanded="false" />
-            <marker date="1458033061000" expanded="true" signature="1408:1452" placeholder="SELECT * FRO... Stock_price" />
+            <element signature="e#421#1129#0" expanded="false" />
+            <element signature="e#1173#1798#0" expanded="false" />
+            <element signature="e#1854#2208#0" expanded="false" />
+            <element signature="e#2258#2696#0" expanded="false" />
+            <element signature="e#2749#3477#0" expanded="false" />
+            <marker date="1458581038000" expanded="true" signature="1430:1474" placeholder="SELECT * FRO... Stock_price" />
           </folding>
         </state>
       </provider>
@@ -856,7 +969,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
           <folding>
-            <element signature="e#0#89#0" expanded="true" />
+            <element signature="e#0#89#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -874,17 +987,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
             <element signature="e#385#739#0" expanded="false" />
             <element signature="e#789#1227#0" expanded="false" />
             <element signature="e#1280#2008#0" expanded="false" />
             <element signature="e#2043#2751#0" expanded="false" />
             <element signature="e#2795#3399#0" expanded="false" />
             <element signature="e#3448#6081#0" expanded="false" />
-            <element signature="e#8917#9289#0" expanded="false" />
-            <element signature="e#9331#9479#0" expanded="false" />
-            <element signature="e#9540#12202#0" expanded="false" />
-            <marker date="1458052013000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
+            <element signature="e#8918#9290#0" expanded="false" />
+            <element signature="e#9332#9480#0" expanded="false" />
+            <element signature="e#9541#12203#0" expanded="false" />
+            <marker date="1458298082000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
           </folding>
         </state>
       </provider>
@@ -896,27 +1008,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../LittleThumb_AutomaticUpdater/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/drawPlot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="57" column="92" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="92" />
-          <folding>
-            <element signature="e#0#89#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -932,57 +1027,141 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.06656805">
           <caret line="419" column="4" selection-start-line="419" selection-start-column="4" selection-end-line="419" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/volume_interpolation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.418919">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/closep_interpolation.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="144" column="14" selection-start-line="144" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-            <element signature="e#399#1107#0" expanded="false" />
-            <element signature="e#1151#1776#0" expanded="false" />
-            <element signature="e#1832#2186#0" expanded="false" />
-            <element signature="e#2236#2674#0" expanded="false" />
-            <element signature="e#2727#3455#0" expanded="false" />
-            <marker date="1458033061000" expanded="true" signature="1408:1452" placeholder="SELECT * FRO... Stock_price" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/segment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.033783782">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/closep_regression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6914414">
-          <caret line="202" column="19" selection-start-line="202" selection-start-column="19" selection-end-line="202" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
           <folding>
-            <element signature="e#0#31#0" expanded="true" />
             <element signature="e#385#739#0" expanded="false" />
             <element signature="e#789#1227#0" expanded="false" />
             <element signature="e#1280#2008#0" expanded="false" />
             <element signature="e#2043#2751#0" expanded="false" />
             <element signature="e#2795#3399#0" expanded="false" />
             <element signature="e#3448#6081#0" expanded="false" />
-            <element signature="e#8917#9289#0" expanded="false" />
-            <element signature="e#9331#9479#0" expanded="false" />
-            <element signature="e#9540#12202#0" expanded="false" />
-            <marker date="1458052013000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
+            <element signature="e#8918#9290#0" expanded="false" />
+            <element signature="e#9332#9480#0" expanded="false" />
+            <element signature="e#9541#12203#0" expanded="false" />
+            <marker date="1458298082000" expanded="true" signature="3052:3096" placeholder="SELECT * FRO... Stock_price" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/drawPlot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4391892">
+          <caret line="63" column="16" selection-start-line="63" selection-start-column="16" selection-end-line="63" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#89#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/volume_interpolation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9324324">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding>
+            <marker date="1457966633000" expanded="true" signature="1408:1452" placeholder="SELECT * FRO... Stock_price" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/numpy/linalg/linalg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="1784" column="4" selection-start-line="1784" selection-start-column="4" selection-end-line="1784" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/numpy/core/numeric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wrappers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="91" selection-start-line="4" selection-start-column="91" selection-end-line="4" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/segment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="33" column="79" selection-start-line="33" selection-start-column="65" selection-end-line="33" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/closep_regression_comparison.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="239" column="23" selection-start-line="239" selection-start-column="23" selection-end-line="239" selection-end-column="23" />
+          <folding>
+            <marker date="1458579455000" expanded="true" signature="3074:3118" placeholder="SELECT * FRO... Stock_price" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/closep_regression_max_error.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333">
+          <caret line="65" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#9966#12628#0" expanded="false" />
+            <marker date="1458577953000" expanded="true" signature="3674:3718" placeholder="SELECT * FRO... Stock_price" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/closep_interpolation_max_error.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="250" column="71" selection-start-line="250" selection-start-column="60" selection-end-line="250" selection-end-column="71" />
+          <folding>
+            <element signature="e#421#1129#0" expanded="false" />
+            <element signature="e#1173#1798#0" expanded="false" />
+            <element signature="e#1854#2208#0" expanded="false" />
+            <element signature="e#2258#2696#0" expanded="false" />
+            <element signature="e#2749#3477#0" expanded="false" />
+            <marker date="1458581038000" expanded="true" signature="1430:1474" placeholder="SELECT * FRO... Stock_price" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6959459">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/closep_interpolation_comparison.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.481482">
+          <caret line="228" column="46" selection-start-line="228" selection-start-column="46" selection-end-line="228" selection-end-column="46" />
+          <folding>
+            <marker date="1458581312000" expanded="true" signature="3074:3118" placeholder="SELECT * FRO... Stock_price" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/closep_comparison.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.43491125">
+          <caret line="91" column="31" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+          <folding>
+            <marker date="1458581934000" expanded="true" signature="3074:3118" placeholder="SELECT * FRO... Stock_price" />
           </folding>
         </state>
       </provider>

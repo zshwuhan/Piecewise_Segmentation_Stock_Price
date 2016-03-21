@@ -22,7 +22,7 @@ def slidingwindowsegment(sequence, create_segment, compute_error, max_error, seq
     while end < seq_range[1]:
         end += 1
         test_segment = create_segment(sequence,(start,end))
-        error = compute_error(sequence,test_segment)
+        error = compute_error(sequence, test_segment)
         if error <= max_error:
             result_segment = test_segment
         else:
